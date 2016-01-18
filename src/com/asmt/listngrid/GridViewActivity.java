@@ -1,28 +1,24 @@
 package com.asmt.listngrid;
 
-
 import com.asmt.listngrid.R;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.GridView;
+import android.widget.Toast;
 
-public class ListViewActivity extends Activity{
-	
-	private ListView listview;
-	private String[] items;
+public class GridViewActivity extends Activity {
 
 	@Override
-	public void onCreate(Bundle savedInstaneState){
-		super.onCreate(savedInstaneState);
-		setContentView(R.layout.activity_listview);
-		listview = (ListView)findViewById(R.id.listView);
-		items = new String[]{
+	public void onCreate(Bundle savedInstanceState){
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_gridview);
+		GridView gv = (GridView)findViewById(R.id.gridView);
+		String[] items = new String[]{
 				"Item 1",
 				"Item 2",
 				"Item 3",
@@ -36,10 +32,9 @@ public class ListViewActivity extends Activity{
 				"Item 11",
 				"Item 12"
 		};
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, android.R.id.text1, items);
-		listview.setAdapter(adapter);
-		listview.setOnItemClickListener(new OnItemClickListener() {
+		ArrayAdapter<String> grdAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,android.R.id.text1,items);
+		gv.setAdapter(grdAdapter);
+		gv.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
 			public void onItemClick(AdapterView<?> adv, View view, int position,
@@ -47,9 +42,11 @@ public class ListViewActivity extends Activity{
 				// TODO Auto-generated method stub
 				showToast("Item "+position+" is clicked");
 			}
-		});		
+		});
 	}
+	
 	public void showToast(String msg){
 		Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
-	}  
+	}
+
 }

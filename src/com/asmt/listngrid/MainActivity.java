@@ -1,6 +1,5 @@
 package com.asmt.listngrid;
-
-import com.example.apptwo.R;
+import com.asmt.listngrid.R;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
@@ -30,9 +30,19 @@ public class MainActivity extends Activity {
 				
 			}
 		});
-		
+		Button btnGridView = (Button)findViewById(R.id.btnGridView);
+		btnGridView.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent(MainActivity.this,GridViewActivity.class);
+				startActivity(intent);
+			}
+		});
 		
 	}
+	
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

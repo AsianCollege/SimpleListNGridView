@@ -1,4 +1,6 @@
-package com.example.apptwo;
+package com.asmt.listngrid;
+
+import com.example.apptwo.R;
 
 import android.app.Activity;
 import android.os.Bundle;

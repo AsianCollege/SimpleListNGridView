@@ -2,7 +2,6 @@ package com.asmt.listngrid;
 
 
 import com.asmt.listngrid.R;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -36,8 +35,10 @@ public class ListViewActivity extends Activity{
 				"Item 11",
 				"Item 12"
 		};
+		
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, android.R.id.text1, items);
+                android.R.layout.simple_list_item_1,android.R.id.text1, items);
+		
 		listview.setAdapter(adapter);
 		listview.setOnItemClickListener(new OnItemClickListener() {
 
